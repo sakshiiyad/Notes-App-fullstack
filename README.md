@@ -36,27 +36,27 @@ This project supports full **CRUD operations**:
 - cors
 
 ---
-
 ## 📂 Project Structure
+
+```bash
 Notes-App-fullstack/
-│
 ├── frontend/
-│ ├── index.html
-│ ├── style.css
-│ └── script.js
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
 │
 ├── backend/
-│ ├── server.js
-│ ├── package.json
-│ ├── .env
-│ └── src/
-│ ├── config/
-│ ├── controllers/
-│ ├── models/
-│ └── routes/
+│   ├── server.js
+│   ├── package.json
+│   ├── .env
+│   └── src/
+│       ├── config/
+│       ├── controllers/
+│       ├── models/
+│       └── routes/
+│
+└── README.md
 
-
----
 
 ## ✅ API Endpoints
 
