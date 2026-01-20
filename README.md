@@ -1,6 +1,6 @@
 # Notes App (Fullstack) 
 
-A Fullstack Notes / Todo style application built with **HTML, CSS, JavaScript** on the frontend and **Node.js + Express + MongoDB (Mongoose)** on the backend.
+A Fullstack Notes application built with **HTML, CSS, JavaScript** on the frontend and **Node.js + Express + MongoDB (Mongoose)** on the backend.
 
 This project supports full **CRUD operations**:
 - ✅ Create a note
