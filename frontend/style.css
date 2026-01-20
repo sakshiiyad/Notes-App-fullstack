@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+main #container {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  position: relative;
+}
+main #container nav {
+  height: 10%;
+  width: 100%;
+  background-color: yellowgreen;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+main #container nav h3 {
+  font-weight: 700;
+  font-size: 30px;
+}
+main #container nav input {
+  padding: 10px;
+  border: none;
+  border-radius: 9px;
+  outline: none;
+}
+main #container nav button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+}
+main #container #newnotedetails {
+  position: absolute;
+  left: 32%;
+  height: 300px;
+  width: 500px;
+  margin-top: 40px;
+  border-radius: 10px;
+  background-color: rgb(180, 196, 110);
+  display: none;
+  align-items: center;
+  flex-direction: column;
+}
+main #container #newnotedetails.active {
+  display: flex;
+}
+main #container #newnotedetails input {
+  margin-top: 10px;
+  width: 90%;
+  padding: 10px;
+}
+main #container #newnotedetails #notebody {
+  margin-top: 10px;
+  height: 50%;
+  width: 90%;
+}
+main #container #newnotedetails #btns {
+  margin-top: 20px;
+}
+main #container #newnotedetails #btns #save {
+  padding: 10px;
+}
+main #container #newnotedetails #btns #discard {
+  padding: 10px;
+}
+main #cards-con {
+  position: absolute;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  top: 70%;
+  left: 10%;
+  right: 10%;
+  align-items: flex-start;
+}
+main #cards-con .cardstyle {
+  width: 300px;
+  padding: 12px;
+  border: 2px solid black;
+}
+main #cards-con .cardstyle h3 {
+  font-size: 25px;
+  padding-bottom: 5px;
+}
+main #cards-con .cardstyle p {
+  font-size: 14px;
+  color: black;
+}
+main #cards-con .cardstyle button {
+  padding: 5px;
+  margin: 6px;
+}/*# sourceMappingURL=style.css.map */
