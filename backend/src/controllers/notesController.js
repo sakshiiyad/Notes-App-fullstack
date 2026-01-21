@@ -17,6 +17,7 @@ const CreateNotes=async(req,res)=>{
    const newNote=await NoteModel.create({
     title,
     content,
+    user:req.user,
     
    });
 
@@ -40,7 +41,8 @@ const CreateNotes=async(req,res)=>{
 
 const GetNotes=async(req,res)=>{
     try{
-        const notes=await NoteModel.find().sort({createdAt:-1}); //sorting basis on latest notes first
+        console.log("getnotes:",req.user);
+        const notes=await NoteModel.find({user:req.user}).sort({createdAt:-1}); //sorting basis on latest notes first
         return res.status(200).json({
         success:true,
         "data":notes
@@ -63,26 +65,35 @@ const GetNotes=async(req,res)=>{
 const RemoveNote=async(req,res)=>{
 
     try{
-        const Id=(req.params.id);
-        const deletedNote=await NoteModel.findByIdAndDelete(Id);
+        const Id=req.params.id;
 
-        if(!deletedNote){
+        const note=await NoteModel.findById(Id);
+        if(!note){
             return res.status(404).json({
-                success:false,
-                message:"note not found"
+         success: false,
+        message: "note not found",
             })
         }
+        if(note.user.toString()!==req.user){
+            return res.status(403).json({
+        success: false,
+        message: "Forbidden: you cannot delete this note",
+      });
+        }
+        await NoteModel.deleteOne({_id:Id});
+
+      
         return res.status(200).json({
             success:true,
             message:"Note deleted successfully",
-            data:deletedNote
+            data:note
         })
          
 
     }
     catch(error){
         return res.status(500).json({
-            status:false,
+            success:false,
             message:"Error in deleting note",
             error:error.message
         })
@@ -96,14 +107,27 @@ const UpdateNote=async(req,res)=>{
   try{
       const Id=req.params.id;
     const{title,content}=req.body;
-    if(!title||!content){
-        return res.status(400).json({
-            success:false,
-            message:"Title and Content are required"
-        })
+//     if(!title||!content){
+//         return res.status(400).json({
+//             success:false,
+//             message:"Title and Content are required"
+//         })
        
 
-}
+// }
+ const note=await NoteModel.findById(Id);
+        if(!note){
+            return res.status(404).json({
+         success: false,
+        message: "note not found",
+            })
+        }
+        if(note.user.toString()!==req.user){
+            return res.status(403).json({
+        success: false,
+        message: "Forbidden: you cannot update this note",
+      });
+        }
 const updatedNote=await NoteModel.findByIdAndUpdate(Id,
     {
         title,
@@ -118,6 +142,7 @@ if(!updatedNote){
         message:"note not found"
     })
 }
+
 return res.status(200).json({
     success:true,
     message:"Note updated successfully",

@@ -12,9 +12,10 @@ const NoteSchema=new Schema({
         required:true
         
     },
-    tags:{
-        type:[String],
-        default:[],
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"users",
+        required:true,
         
         
     },
