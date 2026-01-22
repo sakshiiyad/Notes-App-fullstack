@@ -15,11 +15,14 @@ app.use(cors());
 app.use(express.json());
 
 // Serve frontend (static)
-app.use(express.static(path.join(process.cwd(), "frontend")));
+const frontendPath = path.join(__dirname, "../frontend");
+
+app.use(express.static(frontendPath));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(process.cwd(), "frontend", "index.html"));
+  res.sendFile(path.join(frontendPath, "index.html"));
 });
+
 
 // routes
 app.use("/api/notes", notesRoute);
