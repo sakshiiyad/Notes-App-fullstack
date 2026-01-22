@@ -21,11 +21,11 @@ const loginform = document.querySelector("#loginForm");
 const logoutBtn = document.querySelector("#logoutBtn");
 
 //IMP URLs
-const BASE_URL = "http://localhost:5000";
-const API_URL = "http://localhost:5000/api/notes";
-const AUTH_API = `http://localhost:5000/auth`;
-const SIGNUP_URL = `${AUTH_API}/signup`;
-const LOGIN_URL = `${AUTH_API}/login`;
+
+const API_URL = "/api/notes";
+const SIGNUP_URL = "/auth/signup";
+const LOGIN_URL = "/auth/login";
+
 
 //switching tabs js logic
 loginTab.addEventListener("click", () => {
@@ -133,15 +133,17 @@ btn.addEventListener("click", function () {
 
 const autologin = () => {
   const token = localStorage.getItem("token");
+
   if (token) {
     authSection.classList.add("hidden");
-    appSection.classList.remove("remove");
+    appSection.classList.remove("hidden"); 
     loadNotes();
   } else {
-    authSection.classList.add("active");
+    authSection.classList.remove("hidden"); 
     appSection.classList.add("hidden");
   }
 };
+
 
 let notes = [];
 let editableid = null;
