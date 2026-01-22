@@ -1,39 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes App</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes App</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <main>
-        <section id="container">
-            <nav>
-                <h3>Note</h3>
-                <input type="text" placeholder="Search Something">
-                <button>New Note</button>
-            </nav>
-           
-                <section id="newnotedetails">
-               <input type="text" placeholder="Title" id="title">
-                <hr>
-                <textarea  id="notebody" placeholder="Type your note"></textarea>
-                <div id="btns">
-                    <button id="save">save</button>
-                <button id="discard">discard</button>
-                </div>
-            
-            </section>
-            
-            <section id="cards-con">
+
+  <!-- AUTH SECTION -->
+  <section id="authSection">
+    <div class="authBox">
+      <h2 class="authTitle">Notes App</h2>
+      <p class="authSubTitle">Login or create your account</p>
+
+      <!-- tabs -->
+      <div class="authTabs">
+        <button id="loginTab" class="tabBtn active">Login</button>
+        <button id="signupTab" class="tabBtn">Signup</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="loginForm" class="authForm">
+        <label>Email</label>
+        <input id="loginEmail" type="email" placeholder="Enter email" required />
+
+        <label>Password</label>
+        <input id="loginPassword" type="password" placeholder="Enter password" required />
+
+        <button type="submit" class="authBtn">Login</button>
+      </form>
+
+      <!-- SIGNUP FORM -->
+      <form id="signupForm" class="authForm hidden">
+        <label>Name</label>
+        <input id="signupName" type="text" placeholder="Enter name" required />
+
+        <label>Email</label>
+        <input id="signupEmail" type="email" placeholder="Enter email" required />
+
+        <label>Password</label>
+        <input id="signupPassword" type="password" placeholder="Enter password" required />
+
+        <button type="submit" class="authBtn">Signup</button>
+      </form>
+
+      <p id="authMessage" class="authMessage"></p>
+    </div>
+  </section>
 
 
-            </section>
-        </section>
-    </main>
-    
-    <script src="script.js"></script>
-    
+  <!--  APP SECTION -->
+  <main id="appSection" class="hidden">
+    <section id="container">
+
+      <nav>
+        <h3>Note</h3>
+        <input type="text" placeholder="Search Something">
+        <div class="navActions">
+          <button id="newNoteBtn">New Note</button>
+          <button id="logoutBtn" class="logoutBtn">Logout</button>
+        </div>
+      </nav>
+
+      <section id="newnotedetails">
+        <input type="text" placeholder="Title" id="title">
+        <hr>
+        <textarea id="notebody" placeholder="Type your note"></textarea>
+        <div id="btns">
+          <button id="save">save</button>
+          <button id="discard">discard</button>
+        </div>
+      </section>
+
+      <section id="cards-con"></section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

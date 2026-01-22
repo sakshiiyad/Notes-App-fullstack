@@ -49,6 +49,7 @@ const Signup=async(req,res)=>{
             name:newUser.name,
             email:newUser.email,
         },
+        token,
     })
     }
   catch(error){

@@ -14,13 +14,13 @@ main {
   height: 100%;
   width: 100%;
 }
-main #container {
+main #appSection #container {
   height: 100%;
   width: 100%;
   background-color: white;
   position: relative;
 }
-main #container nav {
+main #appSection #container nav {
   height: 10%;
   width: 100%;
   background-color: yellowgreen;
@@ -28,23 +28,23 @@ main #container nav {
   align-items: center;
   justify-content: space-around;
 }
-main #container nav h3 {
+main #appSection #container nav h3 {
   font-weight: 700;
   font-size: 30px;
 }
-main #container nav input {
+main #appSection #container nav input {
   padding: 10px;
   border: none;
   border-radius: 9px;
   outline: none;
 }
-main #container nav button {
+main #appSection #container nav button {
   padding: 10px;
   border: none;
   border-radius: 5px;
   font-size: 12px;
 }
-main #container #newnotedetails {
+main #appSection #container #newnotedetails {
   position: absolute;
   left: 32%;
   height: 300px;
@@ -56,29 +56,29 @@ main #container #newnotedetails {
   align-items: center;
   flex-direction: column;
 }
-main #container #newnotedetails.active {
+main #appSection #container #newnotedetails.active {
   display: flex;
 }
-main #container #newnotedetails input {
+main #appSection #container #newnotedetails input {
   margin-top: 10px;
   width: 90%;
   padding: 10px;
 }
-main #container #newnotedetails #notebody {
+main #appSection #container #newnotedetails #notebody {
   margin-top: 10px;
   height: 50%;
   width: 90%;
 }
-main #container #newnotedetails #btns {
+main #appSection #container #newnotedetails #btns {
   margin-top: 20px;
 }
-main #container #newnotedetails #btns #save {
+main #appSection #container #newnotedetails #btns #save {
   padding: 10px;
 }
-main #container #newnotedetails #btns #discard {
+main #appSection #container #newnotedetails #btns #discard {
   padding: 10px;
 }
-main #cards-con {
+main #appSection #cards-con {
   position: absolute;
   display: flex;
   gap: 20px;
@@ -88,20 +88,344 @@ main #cards-con {
   right: 10%;
   align-items: flex-start;
 }
-main #cards-con .cardstyle {
+main #appSection #cards-con .cardstyle {
   width: 300px;
   padding: 12px;
   border: 2px solid black;
 }
-main #cards-con .cardstyle h3 {
+main #appSection #cards-con .cardstyle h3 {
   font-size: 25px;
   padding-bottom: 5px;
 }
-main #cards-con .cardstyle p {
+main #appSection #cards-con .cardstyle p {
   font-size: 14px;
   color: black;
 }
-main #cards-con .cardstyle button {
+main #appSection #cards-con .cardstyle button {
   padding: 5px;
   margin: 6px;
 }/*# sourceMappingURL=style.css.map */
+/* =========================
+   AUTH UI
+========================= */
+
+.hidden{
+  display: none !important;
+}
+
+#authSection{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.authBox{
+  width: 380px;
+  padding: 25px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+}
+
+.authTitle{
+  margin-bottom: 5px;
+  font-size: 26px;
+}
+
+.authSubTitle{
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #666;
+}
+
+.authTabs{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tabBtn{
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.tabBtn.active{
+  background: #111;
+  color: white;
+  border-color: #111;
+}
+
+.authForm{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.authForm label{
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.authForm input{
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.authBtn{
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.authMessage{
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #d11;
+}
+
+/* Nav buttons layout */
+.navActions{
+  display: flex;
+  gap: 10px;
+}
+
+.logoutBtn{
+  background: #ff3b3b;
+  color: white;
+}
+/* =========================
+   GLOBAL
+========================= */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+
+body{
+  background: #f6f7fb;
+  color: #111;
+}
+
+.hidden{
+  display: none !important;
+}
+
+/* =========================
+   APP CONTAINER
+========================= */
+#container{
+  width: min(1100px, 95%);
+  margin: 30px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0px 10px 40px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+nav{
+  background: linear-gradient(135deg, #111827, #0f172a);
+  color: white;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 16px 18px;
+}
+
+nav h3{
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+nav input{
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  outline: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+nav input::placeholder{
+  color: rgba(255,255,255,0.6);
+}
+
+.navActions{
+  display: flex;
+  gap: 10px;
+}
+
+nav button{
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+#newNoteBtn{
+  background: #ffffff;
+  color: #111827;
+}
+
+#newNoteBtn:hover{
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.logoutBtn{
+  background: #ef4444;
+  color: white;
+}
+
+.logoutBtn:hover{
+  transform: translateY(-1px);
+}
+
+/* =========================
+   NOTE EDITOR
+========================= */
+#newnotedetails{
+  display: none;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  background: #fafafa;
+}
+
+#newnotedetails.active{
+  display: block;
+}
+
+#title{
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  outline: none;
+  font-weight: 700;
+}
+
+#newnotedetails hr{
+  margin: 12px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+#notebody{
+  width: 100%;
+  min-height: 140px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  outline: none;
+  resize: vertical;
+  font-size: 15px;
+}
+
+#btns{
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+#save{
+  background: #111827;
+  color: white;
+  padding: 11px 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+#discard{
+  background: #e5e7eb;
+  color: #111;
+  padding: 11px 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+/* =========================
+   CARDS
+========================= */
+#cards-con{
+  padding: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.cardstyle{
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.05);
+  transition: 0.2s;
+}
+
+.cardstyle:hover{
+  transform: translateY(-4px);
+}
+
+.cardstyle h3{
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.cardstyle p{
+  font-size: 14px;
+  color: #333;
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.cardstyle hr{
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 10px 0;
+}
+
+.cardstyle button{
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  margin-right: 8px;
+}
+
+.cardstyle button:first-of-type{
+  background: #2563eb;
+  color: white;
+}
+
+.cardstyle button:last-of-type{
+  background: #ef4444;
+  color: white;
+}
